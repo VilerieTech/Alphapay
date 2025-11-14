@@ -31,6 +31,7 @@ describe('Login functionality test', () => {
     it('should not login when email field is empty', () => {
         login.enterPassword(Cypress.env('PASSWORD'))
         login.clickSigninButton()
+        login.assertEmptyEmail()
     })
 
     it('should not login when entering incorrect password', () => {
@@ -42,5 +43,6 @@ describe('Login functionality test', () => {
     it('should not login when password field is empty', () => {
         login.enterEmail(UserData.validEmail)
         login.clickSigninButton()
+        login.assertEmptyPassword()
     })
 })
